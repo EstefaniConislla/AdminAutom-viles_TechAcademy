@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { ClientesComponent } from './clientes/clientes.component';
 
 @NgModule({
-  declarations: [             //arreglo de declaraciones
+  declarations: [
     AppComponent,
     ListaAutosComponent,
     AEspacioPipe,
@@ -29,8 +29,8 @@ import { ClientesComponent } from './clientes/clientes.component';
     RouterModule.forRoot([
       { path: "autos", component: ListaAutosComponent },
       { path: "autos/:id", component: DetalleAutosComponent },
-      { path: "inicio", component: InicioComponent},
-      { path: "clientes", component: ClientesComponent},
+      { path: "inicio", component: InicioComponent },
+      { path: "clientes", component: ClientesComponent },
       { path: "", redirectTo: "inicio", pathMatch: "full" },
       { path: "**", redirectTo: "inicio", pathMatch: "full" }
     ]),

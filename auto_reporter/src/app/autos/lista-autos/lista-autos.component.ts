@@ -3,7 +3,6 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Auto } from 'src/app/datos/auto';
 import { AutosService } from "src/app/shared/autos.service";
 
-
 @Component({
     selector: "lista-autos",
     templateUrl: "./lista-autos.component.html"
@@ -11,34 +10,31 @@ import { AutosService } from "src/app/shared/autos.service";
 export class ListaAutosComponent implements OnInit {
     faStar = faStar;
     starsList = [];
-
     tituloListaAutos: string = "Lista de Autos";
-    
     listaAutos: Auto[] = [];
     listaAutosFiltrados: Auto[] = [];
-
     imageWidth = 200;
     imageMargin = 2;
-    muestraImagen : boolean = false;
-    
-    private _filtro: string ="";
+    muestraImagen: boolean = false;
+
+    private _filtro: string = "";
     get filtro(): string {
         return this._filtro;
     }
-   
-    set  filtro( filtrarPor: string ) {
+
+    set filtro(filtrarPor: string) {
         filtrarPor = filtrarPor.toLocaleLowerCase();
         this.listaAutosFiltrados = this.listaAutos.filter(
-            ( auto: Auto ) => auto.marca.toLocaleLowerCase().includes( filtrarPor)
+            (auto: Auto) => auto.marca.toLocaleLowerCase().includes(filtrarPor)
         )
-        console.log( filtrarPor );
+        console.log(filtrarPor);
     }
 
-    constructor( private _autosService: AutosService ) {}
-   
+    constructor(private _autosService: AutosService) { }
+
     ngOnInit(): void {
         this.listaAutos = this._autosService.obtenListaAutos();
-        this.listaAutosFiltrados = this.listaAutos; [
+        this.listaAutosFiltrados = this.listaAutos;[
             {
                 id: 1,
                 marca: "Audi",
@@ -84,14 +80,14 @@ export class ListaAutosComponent implements OnInit {
                 imagenUrl: "assets/imagenAutos/auto4.JPG"
             }
         ];
-       
+
     }
 
     muestraImagenes(): void {
         this.muestraImagen = !this.muestraImagen;
     }
-    
-    onClickCalificacion( mensaje: string ): void {
-        alert( "Dieron click en la calificacion: " + mensaje );
+
+    onClickCalificacion(mensaje: string): void {
+        alert("Dieron click en la calificacion: " + mensaje);
     }
 }
