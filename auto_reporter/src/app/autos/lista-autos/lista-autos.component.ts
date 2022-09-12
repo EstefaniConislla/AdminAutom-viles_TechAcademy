@@ -30,10 +30,10 @@ export class ListaAutosComponent implements OnInit {
         console.log(filtrarPor);
     }
 
-    constructor(private _autosService: AutosService) { }
+    constructor(private autosService: AutosService) { }
 
     ngOnInit(): void {
-        this.listaAutos = this._autosService.obtenListaAutos();
+        this.listaAutos = this.autosService.obtenListaAutos();
         this.listaAutosFiltrados = this.listaAutos;[
             {
                 id: 1,
@@ -44,7 +44,7 @@ export class ListaAutosComponent implements OnInit {
                 kilometros: 5000,
                 calificacion: 2,
                 precio: 5500000,
-                imagenUrl: "assets/imagenAutos/auto1.JPG"
+                imagenUrl: "assets/imagenAutos/autoUno.jpg"
             },
             {
                 id: 2,
@@ -55,7 +55,7 @@ export class ListaAutosComponent implements OnInit {
                 kilometros: 10500,
                 calificacion: 4,
                 precio: 2900000,
-                imagenUrl: "assets/imagenAutos/auto2.JPG"
+                imagenUrl: "assets/imagenAutos/autoDos.jpg"
             },
             {
                 id: 3,
@@ -66,10 +66,21 @@ export class ListaAutosComponent implements OnInit {
                 kilometros: 18000,
                 calificacion: 3,
                 precio: 2000000,
-                imagenUrl: "assets/imagenAutos/auto3.JPG"
+                imagenUrl: "assets/imagenAutos/autoTres.png"
             },
             {
                 id: 4,
+                marca: "Chevrolet",
+                modelo: "bX-26",
+                anio: 2020,
+                color: "Naranja",
+                kilometros: 0,
+                calificacion: 1,
+                precio: 3500000,
+                imagenUrl: "assets/imagenAutos/autoCuatro.jpg"
+            },
+            {
+                id: 5,
                 marca: "Audi",
                 modelo: "bX-44",
                 anio: 2020,
@@ -77,7 +88,7 @@ export class ListaAutosComponent implements OnInit {
                 kilometros: 0,
                 calificacion: 1,
                 precio: 3500000,
-                imagenUrl: "assets/imagenAutos/auto4.JPG"
+                imagenUrl: "assets/imagenAutos/autoCinco.jpg"
             }
         ];
 
