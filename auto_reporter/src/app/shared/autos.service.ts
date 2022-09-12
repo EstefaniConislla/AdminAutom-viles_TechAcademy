@@ -59,7 +59,7 @@ export class AutosService {
                 modelo: "bX-26",
                 anio: 2020,
                 color: "Naranja",
-                kilometros: 0,
+                kilometros: 40000,
                 calificacion: 1,
                 precio: 3500000,
                 imagenUrl: "assets/imagenAutos/autoCuatro.jpg"
@@ -71,7 +71,7 @@ export class AutosService {
                 anio: 2020,
                 color: "Azul",
                 kilometros: 0,
-                calificacion: 1,
+                calificacion: 3,
                 precio: 3500000,
                 imagenUrl: "assets/imagenAutos/autoCinco.jpg"
             }
